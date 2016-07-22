@@ -19,7 +19,7 @@ function getCantosList() {
 			$('#cantoslist').append(
 				'<li><a  class="linha" href="html/'+canto.html+'.HTML" >' +
 				'<img class="categoria_img" src="img/dot'+categ+'.png" />'+          
-				'<p   class="titulo">'+canto.nome+'</p>'+
+				'<span class="titulo">'+canto.nome+'</span>'+
 				'<span class="conteudo">'+canto.conteudo+'</span></a></li>');
 		});
 		$('#cantoslist').listview('refresh');

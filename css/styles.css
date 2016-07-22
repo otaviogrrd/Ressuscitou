@@ -7,6 +7,12 @@
 .ui-li, .ui-li.ui-field-contain {
     border-top-width: 0px;
 }
+.html_canto {
+	    overflow: scroll;
+}
+.ui-btn span{
+font-size: 12px !important;
+}
 .ui-btn-icon-right .ui-icon {
 	display: none;
 }
@@ -15,17 +21,31 @@
     padding: 5px;	
 }
 
-.linha{
-	display: inline-table !important;
-}
 .linha .categoria_img{
-	padding: 4px 2px !important;
-	width:15px;
-	height:15px;
+	padding-left: 10px;
+	height: 15px;
+	position: sticky;
+    top: 10%;
 }
-.linha p{
-	margin-left: 16px;font-family: arial;
+.titulo {
+	position: absolute;
+	top: 15%;
+	font-family: arial;
+	font-weight: initial;
+	padding-left: 10px;
 }
 .linha .conteudo{
 	display: none;
 }
+
+/*.ui-fixed-inline { 
+opacity: 1!important;
+ display:block!important;
+ -webkit-animation-name:none!important; 
+ }
+.fade.in, .fade.out { 
+opacity: 1!important;
+ -webkit-animation-name:none!important;
+ display:block!important; 
+ } */
+ 
