@@ -1,0 +1,31 @@
+#actionList {
+	clear: both;
+}
+.ui-li-desc {
+    margin: 0px;
+}
+.ui-li, .ui-li.ui-field-contain {
+    border-top-width: 0px;
+}
+.ui-btn-icon-right .ui-icon {
+	display: none;
+}
+.ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
+	min-height: 15px;
+    padding: 5px;	
+}
+
+.linha{
+	display: inline-table !important;
+}
+.linha .categoria_img{
+	padding: 4px 2px !important;
+	width:15px;
+	height:15px;
+}
+.linha p{
+	margin-left: 16px;font-family: arial;
+}
+.linha .conteudo{
+	display: none;
+}
