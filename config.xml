@@ -2,7 +2,7 @@
   <name>Ressuscitou</name>
   <description>Cantos do Caminho Neocatecumenal</description>
   <author href="http://www.cn.org.br/" email="otavio.grrd@gmail.com">Caminho Neocatecumenal no Brasil</author>
-  <content src="/ressuscitou/index.html"/>
+  <content src="index.html"/>
   <icon src="img/icone.png"/>
   <access origin="*"/>
   <plugin name="cordova-plugin-whitelist" version="1"/>
