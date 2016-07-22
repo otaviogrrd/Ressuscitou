@@ -11,21 +11,19 @@
 	    overflow: scroll;
 }
 .ui-btn span{
-font-size: 12px !important;
 }
 .ui-btn-icon-right .ui-icon {
 	display: none;
 }
 .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
 	min-height: 15px;
-    padding: 5px;	
+    	padding: 5px;	
 }
 
 .linha .categoria_img{
 	padding-left: 10px;
 	height: 15px;
-	position: sticky;
-    top: 10%;
+	vertical-align: middle;
 }
 .titulo {
 	position: absolute;
