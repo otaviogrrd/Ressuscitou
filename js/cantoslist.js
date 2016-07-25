@@ -20,7 +20,8 @@ function getCantosList() {
 				'<li><a  class="linha" href="html/'+canto.html+'.HTML" >' +
 				'<img class="categoria_img" src="img/dot'+categ+'.png" />'+          
 				'<span class="titulo">'+canto.nome+'</span>'+
-				'<span class="conteudo">'+canto.conteudo+'</span></a></li>');
+				//'<span class="conteudo">'+canto.conteudo+'</span>'
+				+'</a></li>');
 		});
 		$('#cantoslist').listview('refresh');
 	});
