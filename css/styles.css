@@ -15,7 +15,8 @@
     	padding: 5px;	
 }
 
-.html_canto {
+.html_canto {{
+	font-size: 9px;
 	    overflow: scroll;
 }
 .linha .categoria_img{
