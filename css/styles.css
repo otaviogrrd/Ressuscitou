@@ -33,7 +33,7 @@
 .html_canto {
 	font-size: 9px;
     overflow: scroll;
-	margin-left: 10px;
+	padding-left: 10px;
 }
 
 .linha  {
