@@ -12,12 +12,28 @@
 }
 .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
 	min-height: 15px;
-    	padding: 5px;	
+   	padding: 5px;	
+}
+
+.ui-page .ui-page-theme-a .ui-page-header-fixed .ui-page-active{
+	padding-top: 0px !important;
+}
+.ui-filterable{
+	width: 93%;
+	position: fixed;
+	z-index: 1000;
+}
+.ui-listview {
+    margin-top: 2.5em !important;
+}
+#barra {
+	height: 30px;
 }
 
 .html_canto {
 	font-size: 9px;
     overflow: scroll;
+	margin-left: 10px;
 }
 
 .linha  {
@@ -31,16 +47,4 @@
 }
 .linha .conteudo{
 	display: none;
-}
-
-.ui-page .ui-page-theme-a .ui-page-header-fixed .ui-page-active{
-	padding-top: 0px !important;
-}
-.ui-filterable{
-width: 93%;
-position: fixed;
-z-index: 1000;
-}
-.ui-listview {
-    margin-top: 2.5em !important;
 }
