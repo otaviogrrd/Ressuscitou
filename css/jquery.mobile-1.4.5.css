@@ -928,8 +928,8 @@ html .ui-alt-icon .ui-radio-off:after {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit {
-	    background-color: #212121;
-    border-color: #ddd;
+	background-color: #212121;
+    border-color: #212121;
     color: white;
     font-weight: bold;
 }
@@ -2626,7 +2626,7 @@ li.ui-block-e {
 	z-index: 1000;
 }
 .ui-header-fixed {
-	top: -1px;
+	top: -2px;
 	padding-top: 1px;
 }
 .ui-header-fixed.ui-fixed-hidden {
