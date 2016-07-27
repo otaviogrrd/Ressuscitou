@@ -36,3 +36,11 @@
 .ui-page .ui-page-theme-a .ui-page-header-fixed .ui-page-active{
 	padding-top: 0px !important;
 }
+.ui-filterable{
+width: 93%;
+position: fixed;
+z-index: 1000;
+}
+.ui-listview {
+    margin-top: 2.5em !important;
+}
