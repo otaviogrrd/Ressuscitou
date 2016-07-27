@@ -1486,7 +1486,6 @@ overflow-x: scroll;
 .ui-content {
 	border-width: 0;
 	overflow: visible;
-	overflow-x: hidden;
 	padding: 6px 15px 0px 15px;
 }
 /* Corner styling for dialogs and popups */
