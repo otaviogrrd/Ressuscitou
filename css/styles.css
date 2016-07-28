@@ -35,7 +35,9 @@
     overflow: scroll;
 	padding-left: 10px;
 }
-
+.zoom{
+	height: 5px;
+}
 .linha  {
 	font-family: arial;
 	padding-top: 4px !important;
