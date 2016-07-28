@@ -1,0 +1,52 @@
+#actionList {
+	clear: both;
+}
+.ui-li-desc {
+    margin: 0px;
+}
+.ui-li, .ui-li.ui-field-contain {
+    border-top-width: 0px;
+}
+.ui-btn-icon-right .ui-icon {
+	display: none;
+}
+.ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
+	min-height: 15px;
+   	padding: 5px;	
+}
+
+.ui-page .ui-page-theme-a .ui-page-header-fixed .ui-page-active{
+	padding-top: 0px !important;
+}
+.ui-filterable{
+	width: 93%;
+	position: fixed;
+	z-index: 1000;
+}
+.ui-listview {
+    margin-top: 2.5em !important;
+}
+#barra {
+	height: 30px;
+}
+
+.html_canto {
+	font-size: 9px;
+    overflow: scroll;
+	padding-left: 10px;
+}
+.zoom{
+	height: 5px;
+}
+.linha  {
+	font-family: arial;
+	padding-top: 4px !important;
+	font-size: 13px !important;
+}
+.linha .categoria_img{
+	padding: 0px 4px 1px 20px;
+	height: 10px;
+}
+.linha .conteudo{
+	display: none;
+}
