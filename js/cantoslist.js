@@ -25,3 +25,21 @@ function getCantosList() {
 		$('#cantoslist').listview('refresh');
 	});
 }
+
+var size = 9;
+function zoomMais() {
+		size++;
+	$('#html_canto').css({
+        'font-size': size+'px'
+    });
+
+};
+function zoomMenos() {
+	if (size > 1)
+	size--;
+	
+	$('#html_canto').css({
+        'font-size': size+'px'
+    });
+
+};

@@ -33,9 +33,11 @@
 .html_canto {
 	font-size: 9px;
     overflow: scroll;
-	margin-left: 10px;
+	padding-left: 10px;
 }
-
+.zoom{
+	height: 5px;
+}
 .linha  {
 	font-family: arial;
 	padding-top: 4px !important;
