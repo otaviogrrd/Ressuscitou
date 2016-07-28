@@ -33,13 +33,14 @@ function zoomMais() {
         'font-size': size+'px'
     });
 };
+
+
 function zoomMenos() {
 	if (size > 1)
 	size--;
 	$('#html_canto').css({
         'font-size': size+'px'
     });
-
 };
 
 var pagina = "";
@@ -69,3 +70,69 @@ $(document).bind('pageshow', function(event) {
         'min-height': document.body.scrollHeight+'px'
     });
 });
+
+
+var escalaTmp = ["zerofiller", "@01", "@02", "@03", "@04", "@05", "@06", "@07", "@08","@09", "@10", "@11", "@12" ];
+var escala = ["zerofiller", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#","La", "Sib", "Si", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "Sib", "Si" ];
+var transVisible = 0;
+function showTrans(){
+	if (transVisible == 0 ){
+		transVisible++;
+		$('#transDialog').css({'display': 'initial' });	
+	}else {
+		transVisible--;
+		$('#transDialog').css({'display': 'none' });	
+	}
+}
+function transpor(numero){
+	var pri = 99;
+	var dif = 0;
+	var lines = document.getElementById('html_canto').innerHTML.split('\n');
+	var newHtml = '';
+	
+	for(var i=0;i<lines.length;i++){
+		if (lines[i].includes('FF0000')){
+			if (!lines[i].includes('<h2>')) {
+			// PRECISA CORRIGIR!!!!!!!!!!!!! NAO SUBSTITUI #
+			lines[i].replace("Do#", escalaTmp[2]).replace("Fa#", escalaTmp[7]).replace("Sol#", escalaTmp[9]);
+			for(var j = 0;j < escalaTmp.length;j++) {
+				for(var z=0;z<15;z++) {
+					lines[i] = lines[i].replace(escala[j], escalaTmp[j]);
+				}
+			}
+			
+			// Lógica para descobrir a primeira nota:
+			if (pri == 99) {
+				var x = "@";
+				for(var j = 0; j< lines[i].length;j++) {
+					if (lines[i].charAt(j) == x.charAt(0)) {
+						pri = lines[i].substring(j + 1, j + 3);
+						// dif = quantas casas vai subir ou descer
+						dif = Math.abs(numero - pri);
+						break;
+					}
+				}
+			}
+			if ((pri > numero) && !(dif == 0)) {
+				for (var j = 12; j > 0; j--) {
+					for(var z=0;z<15;z++) {	lines[i] = lines[i].replace(escalaTmp[j], escala[j + 12 - dif]); }
+				}
+			}
+			if ((pri < numero) && !(dif == 0)) {
+				for (var j = 0; j < escalaTmp.length; j++) {
+					for(var z=0;z<15;z++) { lines[i] = lines[i].replace(escalaTmp[j], escala[j + dif]);}
+				}
+			}
+			if (pri - numero == 0) {
+				for (var j = 0; j < escalaTmp.length; j++) {
+					for(var z=0;z<15;z++) {lines[i] = lines[i].replace(escalaTmp[j], escala[j]);}
+				}
+			}
+			
+			}
+		}	
+		newHtml = newHtml + '\n' + lines[i];		
+	}
+	document.getElementById('html_canto').innerHTML = newHtml;
+	showTrans();
+}
