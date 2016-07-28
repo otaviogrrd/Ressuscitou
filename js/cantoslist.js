@@ -43,3 +43,25 @@ function zoomMenos() {
     });
 
 };
+
+var pagina = "";
+function autScrl() {
+	pagina = window.location.href;
+	var inicial = window.pageYOffset;
+	window.scrollTo(0, document.body.scrollHeight);
+	descer(window.pageYOffset);
+	window.scrollTo(0, inicial);
+};
+function descer(i) {
+	if ( window.location.href === pagina ){
+		setTimeout(function () { 
+			var pos = window.pageYOffset;
+			pos++;
+			if (pos < i) {
+				window.scrollTo(0, pos);
+				descer(i);
+			}
+		},500);
+	}
+}
+
