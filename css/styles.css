@@ -35,6 +35,9 @@
     overflow: scroll;
 	padding-left: 10px;
 }
+.bttn_texto{
+	height: 18px; 
+}
 .zoom{
 	height: 5px;
 }
@@ -49,4 +52,19 @@
 }
 .linha .conteudo{
 	display: none;
+}
+.column{
+	background-color: #212121;
+	padding: 1px;
+	float: left;
+}
+#transDialog{
+	display: none;
+	position: absolute;
+    width: 100%;
+    top: 10%;
+}
+#transInner {
+    margin: auto;
+    width: 40%;
 }
