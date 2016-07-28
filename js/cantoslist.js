@@ -1,4 +1,4 @@
-$('#cantosListPage').bind('pageinit', function(event) {
+$('#cantosListPage').bind('pagecreate', function(event) {
 	getCantosList();
 });
 
@@ -32,12 +32,10 @@ function zoomMais() {
 	$('#html_canto').css({
         'font-size': size+'px'
     });
-
 };
 function zoomMenos() {
 	if (size > 1)
 	size--;
-	
 	$('#html_canto').css({
         'font-size': size+'px'
     });
@@ -65,3 +63,9 @@ function descer(i) {
 	}
 }
 
+
+$(document).bind('pageshow', function(event) {
+	$('#html_canto').css({
+        'min-height': document.body.scrollHeight+'px'
+    });
+});
