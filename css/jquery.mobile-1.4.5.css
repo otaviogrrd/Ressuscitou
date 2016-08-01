@@ -1532,7 +1532,7 @@ overflow-x: scroll;
 }
 .ui-header .ui-controlgroup .ui-btn-icon-notext,
 .ui-footer .ui-controlgroup .ui-btn-icon-notext {
-    font-size: 11.5px;
+    font-size: 13.5px;
 }
 /* To ensure same top and left/right position when ui-btn-left/right are added to something other than buttons. */
 .ui-header .ui-btn-left,
