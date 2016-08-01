@@ -28,7 +28,7 @@ function getCantosList() {
 
 var size = 9;
 function zoomMais() {
-		size++;
+	size++;
 	$('#html_canto').css({
         'font-size': size+'px'
     });
@@ -36,7 +36,7 @@ function zoomMais() {
 
 
 function zoomMenos() {
-	if (size > 1)
+	if (size > 9)
 	size--;
 	$('#html_canto').css({
         'font-size': size+'px'
