@@ -27,7 +27,7 @@
     margin-top: 2.5em !important;
 }
 #barra {
-	height: 30px;
+	height: 40px;
 }
 
 .html_canto {
@@ -66,5 +66,5 @@
 }
 #transInner {
     margin: auto;
-    width: 40%;
+    display: table;
 }

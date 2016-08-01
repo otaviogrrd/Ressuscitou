@@ -2635,7 +2635,7 @@ li.ui-block-e {
 }
 .ui-header-fixed .ui-btn-left,
 .ui-header-fixed .ui-btn-right {
-	margin-top: 1px;
+	margin-top: 5px;
 }
 .ui-header-fixed.ui-fixed-hidden .ui-btn-left,
 .ui-header-fixed.ui-fixed-hidden .ui-btn-right {

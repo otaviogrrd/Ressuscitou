@@ -93,10 +93,9 @@ function transpor(numero){
 	for(var i=0;i<lines.length;i++){
 		if (lines[i].includes('FF0000')){
 			if (!lines[i].includes('<h2>')) {
-			// PRECISA CORRIGIR!!!!!!!!!!!!! NAO SUBSTITUI #
-			lines[i].replace("Do#", escalaTmp[2]).replace("Fa#", escalaTmp[7]).replace("Sol#", escalaTmp[9]);
-			for(var j = 0;j < escalaTmp.length;j++) {
-				for(var z=0;z<15;z++) {
+			for(var z=0;z<8;z++) {//repete 8x pra caso tenha notas repetidas na mesma linha
+				lines[i] = lines[i].replace("Do#", escalaTmp[2]).replace("Fa#", escalaTmp[7]).replace("Sol#", escalaTmp[9]);
+				for(var j = 0;j < escalaTmp.length;j++) {
 					lines[i] = lines[i].replace(escala[j], escalaTmp[j]);
 				}
 			}
