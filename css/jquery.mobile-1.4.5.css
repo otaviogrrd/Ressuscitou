@@ -1516,7 +1516,7 @@ overflow-x: scroll;
 /* Make buttons in toolbars default to mini and inline. */
 .ui-header .ui-btn,
 .ui-footer .ui-btn {
-	font-size: 12.5px;
+	font-size: 15px;
 	display: inline-block;
 	vertical-align: middle;
 }
@@ -1525,10 +1525,6 @@ overflow-x: scroll;
     font-size: 12.5px;
 }
 /* To ensure same top and left/right position when ui-btn-left/right are added to something other than buttons. */
-.ui-header .ui-btn-left,
-.ui-header .ui-btn-right {
-	font-size: 12.5px;
-}
 .ui-mini.ui-btn-icon-notext,
 .ui-mini .ui-btn-icon-notext,
 .ui-header .ui-btn-icon-notext,
