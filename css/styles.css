@@ -50,7 +50,7 @@
 	display: none;
 	position: absolute;
     width: 100%;
-    top: 10%;
+    margin-top: 10px;
 }
 #transInner {
     margin: auto;
