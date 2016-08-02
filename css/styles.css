@@ -27,9 +27,8 @@
     margin-top: 2.5em !important;
 }
 #barra {
-    height: 40px;
-    font-family: arial;
-	
+	height: 40px;
+	font-family: arial;
 }
 
 .html_canto {
@@ -38,8 +37,8 @@
 	padding-left: 10px;
 }
 .bttn_texto{
-	height: 18px; 
-	padding: 5px !important;
+	height: 18px;
+    padding: 8px 3px 2px 3px !important;
 }
 .zoom{
 	height: 5px;
@@ -56,10 +55,12 @@
 .linha .conteudo{
 	display: none;
 }
-.column{
+.column {
 	background-color: #212121;
-	padding: 1px;
 	float: left;
+}
+.column .bttn_texto{
+    margin: 5px;
 }
 #transDialog{
 	display: none;
@@ -70,4 +71,7 @@
 #transInner {
     margin: auto;
     display: table;
+}
+#voltar {
+    padding: 7px !important;
 }
