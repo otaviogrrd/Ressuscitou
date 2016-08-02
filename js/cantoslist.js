@@ -76,6 +76,7 @@ function showTrans(){
 	if (transVisible == 0 ){
 		transVisible++;
 		$('#transDialog').css({'display': 'initial' });	
+		$('#transDialog').css({'margin-top' : 10 + window.pageYOffset+'px' });	
 	}else {
 		transVisible--;
 		$('#transDialog').css({'display': 'none' });	
