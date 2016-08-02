@@ -1,11 +1,13 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body>
-<div id="barra" class="ui-header ui-bar-inherit ui-header-fixed slidedown" role="banner" data-role="header" data-position="fixed">
+<div id="barra" class="ui-header ui-bar-inherit ui-header-fixed slidedown" role="banner" data-role="header" data-position="fixed"
+data-hide-during-focus=""  data-tap-toggle="false" >
 <a id="voltar" href="#cantosListPage" data-role="button" data-inline="true" >Voltar</a>
 <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
-	<a onclick="zoomMenos()" data-role="button" class="zoom ui-btn ui-icon-minus ui-btn-icon-notext">-</a>
-	<a onclick="zoomMais()"  data-role="button" class="zoom ui-btn ui-icon-plus ui-btn-icon-notext">+</a>
-</div>
-</div>
+	<a onclick="autScrl()"   data-role="button" class="bttn_texto ui-btn"><img class="icon_img" src="../img/arrowd.png" /></a>
+	<a onclick="showTrans()" data-role="button" class="bttn_texto ui-btn">Transpor</a>
+	<a onclick="zoomMenos()" data-role="button" class="bttn_texto ui-btn"><img class="icon_img" src="../img/minus.png"  /></a>
+	<a onclick="zoomMais()"  data-role="button" class="bttn_texto ui-btn"><img class="icon_img" src="../img/plus.png"   /></a>
+</div></div>
 <div id="transDialog"><div id="transInner">
 	<div class="column">
 		<a onclick="transpor(1)"  data-role="button" class="bttn_texto">Do/Do-</a>
