@@ -27,8 +27,11 @@ $('#cantosListPage').bind('pagecreate', function(event) {
 
 var size = 9;
 var pagina = "";
+var transVisible = 0;
 
 $(document).bind('pageshow', function(event) {
+	//reset variables
+	transVisible = 0; 
 	size = 9;
 	$('#html_canto').css({
         'min-height': document.body.scrollHeight+'px'
@@ -69,9 +72,6 @@ function descer(i) {
 	}
 }
 
-var escalaTmp = ["zerofiller", "@01", "@02", "@03", "@04", "@05", "@06", "@07", "@08","@09", "@10", "@11", "@12" ];
-var escala = ["zerofiller", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#","La", "Sib", "Si", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "Sib", "Si" ];
-var transVisible = 0;
 function showTrans(){
 	if (transVisible == 0 ){
 		transVisible++;
@@ -82,6 +82,10 @@ function showTrans(){
 		$('#transDialog').css({'display': 'none' });	
 	}
 }
+
+var escalaTmp = ["zerofiller","@01","@02","@03","@04","@05","@06","@07","@08","@09","@10","@11","@12" ];
+var escala = ["zerofiller","Do","Do#","Re","Mib","Mi","Fa","Fa#","Sol","Sol#","La","Sib","Si","Do","Do#","Re","Mib","Mi","Fa","Fa#","Sol","Sol#","La","Sib","Si" ];
+
 function transpor(numero){
 	var pri = 99;
 	var dif = 0;
