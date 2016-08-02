@@ -31,17 +31,39 @@
 	font-family: arial;
 }
 
+#voltar{      
+	padding: 6px 12px !important;
+    height: 16px;
+}
+.bttn_texto{      
+	padding: 6px 12px !important;
+    height: 16px;
+}
+.zoom{    
+	padding: 3px 12px !important;
+}
+#transDialog{
+	display: none;
+	position: absolute;
+    width: 100%;
+    top: 10%;
+}
+#transInner {
+    margin: auto;
+    display: table;
+}
+.column {
+	background-color: #212121;
+	float: left;
+}
+.column .bttn_texto{
+    margin: 5px;
+}
+
 .html_canto {
 	font-size: 9px;
     overflow: scroll;
 	padding-left: 10px;
-}
-.bttn_texto{
-	height: 18px;
-    padding: 8px 3px 2px 3px !important;
-}
-.zoom{
-	height: 5px;
 }
 .linha  {
 	font-family: arial;
@@ -54,24 +76,4 @@
 }
 .linha .conteudo{
 	display: none;
-}
-.column {
-	background-color: #212121;
-	float: left;
-}
-.column .bttn_texto{
-    margin: 5px;
-}
-#transDialog{
-	display: none;
-	position: absolute;
-    width: 100%;
-    top: 10%;
-}
-#transInner {
-    margin: auto;
-    display: table;
-}
-#voltar {
-    padding: 7px !important;
 }
