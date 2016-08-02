@@ -1,8 +1,4 @@
 $('#cantosListPage').bind('pagecreate', function(event) {
-	getCantosList();
-});
-
-function getCantosList() {
 	$.getJSON('cantos.json', function(data) {
 		
 		$.each(data, function(index, canto) {
@@ -16,25 +12,35 @@ function getCantosList() {
 		}else if(canto.categ === '4'){
 			categ = 'beige';
 		}
-			$('#cantoslist').append(
-				'<li><a  class="linha" href="html/'+canto.html+'.HTML" >' +
-				'<img class="categoria_img" src="img/dot'+categ+'.png" />'+          
-				canto.nome +
-				'<span class="conteudo">'+canto.conteudo+'</span></a></li>');
+		
+		$('#cantoslist').append(
+			'<li><a  class="linha" href="html/'+canto.html+'.HTML" >' +
+			'<img class="categoria_img" src="img/dot'+categ+'.png" />'+          
+			canto.nome +
+			'<span class="conteudo">'+canto.conteudo+'</span></a></li>');
 		});
+		
 		$('#cantoslist').listview('refresh');
 	});
-}
+});
+
 
 var size = 9;
+var pagina = "";
+
+$(document).bind('pageshow', function(event) {
+	size = 9;
+	$('#html_canto').css({
+        'min-height': document.body.scrollHeight+'px'
+    });
+});
+
 function zoomMais() {
 	size++;
 	$('#html_canto').css({
         'font-size': size+'px'
     });
 };
-
-
 function zoomMenos() {
 	if (size > 9)
 	size--;
@@ -43,7 +49,6 @@ function zoomMenos() {
     });
 };
 
-var pagina = "";
 function autScrl() {
 	pagina = window.location.href;
 	var inicial = window.pageYOffset;
@@ -63,14 +68,6 @@ function descer(i) {
 		},500);
 	}
 }
-
-
-$(document).bind('pageshow', function(event) {
-	$('#html_canto').css({
-        'min-height': document.body.scrollHeight+'px'
-    });
-});
-
 
 var escalaTmp = ["zerofiller", "@01", "@02", "@03", "@04", "@05", "@06", "@07", "@08","@09", "@10", "@11", "@12" ];
 var escala = ["zerofiller", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#","La", "Sib", "Si", "Do", "Do#", "Re", "Mib", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "Sib", "Si" ];
