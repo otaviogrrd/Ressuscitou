@@ -39,7 +39,7 @@
 }
 .bttn_texto{
 	height: 18px; 
-	margin: 4px;
+	padding: 5px !important;
 }
 .zoom{
 	height: 5px;
