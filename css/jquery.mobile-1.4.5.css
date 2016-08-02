@@ -1457,15 +1457,7 @@ overflow-x: scroll;
 .ui-header .ui-title,
 .ui-footer .ui-title {
 	font-size: 1em;
-	min-height: 1.1em;
 	text-align: center;
-	display: block;
-	margin: 0 30%;
-	padding: .7em 0;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-	outline: 0 !important;
 }
 .ui-footer .ui-title {
 	margin: 0 1em;
