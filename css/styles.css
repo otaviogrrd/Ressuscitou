@@ -31,6 +31,9 @@ margin-top: 2.5em !important;
 height: 43px;
 font-family: arial;
 }
+#barra  .ui-title{
+    margin-top: 12px;
+}
 #barra .icon_img {
 height: 18px;
 }
