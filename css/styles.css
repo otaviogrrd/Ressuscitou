@@ -1,83 +1,82 @@
 #cantoslist {
-	clear: both;
-	padding-bottom: 30px;
+clear: both;
+padding-bottom: 30px;
 }
 .ui-li-desc {
-    margin: 0px;
+margin: 0px;
 }
 .ui-li, .ui-li.ui-field-contain {
-    border-top-width: 0px;
+border-top-width: 0px;
 }
 .ui-btn-icon-right .ui-icon {
-	display: none;
+display: none;
 }
 .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
-	min-height: 15px;
-   	padding: 5px;	
+min-height: 15px;
+padding: 5px;	
 }
 
 .ui-page .ui-page-theme-a .ui-page-header-fixed .ui-page-active{
-	padding-top: 0px !important;
+padding-top: 0px !important;
 }
 .ui-filterable{
-	width: 93%;
-	position: fixed;
-	z-index: 1000;
+width: 93%;
+position: fixed;
+z-index: 1000;
 }
 .ui-listview {
-    margin-top: 2.5em !important;
+margin-top: 2.5em !important;
 }
 #barra {
-	height: 40px;
-	font-family: arial;
+height: 40px;
+font-family: arial;
 }
 #barra .icon_img {
-	height: 18px;
+height: 18px;
 }
 
 #voltar{      
-	padding: 6px 12px !important;
-    height: 16px;
+padding: 6px 12px !important;
+height: 16px;
 }
 .bttn_texto{      
-	padding: 6px 12px !important;
-    height: 16px;
+padding: 6px 12px !important;
+height: 16px;
 }
 .zoom{    
-	padding: 3px 12px !important;
+padding: 3px 12px !important;
 }
 #transDialog{
-	display: none;
-	position: absolute;
-    width: 100%;
-    margin-top: 10px;
+display: none;
+position: absolute;
+width: 100%;
 }
 #transInner {
-    margin: auto;
-    display: table;
+margin: auto;
+display: table;
 }
 .column {
-	background-color: #212121;
-	float: left;
+background-color: #212121;
+float: left;
 }
 .column .bttn_texto{
-    margin: 5px;
+margin: 5px;
 }
 
 .html_canto {
-	font-size: 9px;
-    overflow: scroll;
-	padding-left: 10px;
+font-size: 9px;
+overflow: scroll;
+padding-left: 10px;
 }
 .linha  {
-	font-family: arial;
-	padding: 4px 3px !important;
-	font-size: 13px !important;
+font-family: arial;
+padding: 4px 3px !important;
+font-size: 13px !important;
 }
 .linha .categoria_img{
-	padding: 0px 4px 1px 20px;
-	height: 10px;
+padding: 0px 4px 1px 20px;
+height: 10px;
 }
 .linha .conteudo{
-	display: none;
+display: none;
 }
