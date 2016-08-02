@@ -30,6 +30,9 @@
 	height: 40px;
 	font-family: arial;
 }
+#barra .categoria_img {
+	height: 18px;
+}
 
 #voltar{      
 	padding: 6px 12px !important;
