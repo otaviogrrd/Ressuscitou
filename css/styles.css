@@ -27,7 +27,9 @@
     margin-top: 2.5em !important;
 }
 #barra {
-	height: 40px;
+    height: 40px;
+    font-family: arial;
+	
 }
 
 .html_canto {
