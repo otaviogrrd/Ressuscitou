@@ -14,9 +14,11 @@ $('#cantosListPage').bind('pagecreate', function(event) {
 		}
 		
 		$('#cantoslist').append(
-			'<li><a  class="linha" href="html/'+canto.html+'.HTML" >' +
-			'<img class="categoria_img" src="img/dot'+categ+'.png" />'+          
-			canto.nome +
+			'<li><a class="linha" onclick="setUrl(\''+canto.url+'\')"' +
+			'href="html/'+canto.html+'.HTML" >' +
+			'<img class="categoria_img" src="img/dot'+categ+'.png" />'+      
+			canto.nome +    
+			'<span class="conteudo"'+canto.url+'</span>'+          
 			'<span class="conteudo">'+canto.conteudo+'</span></a></li>');
 		});
 		
@@ -24,20 +26,26 @@ $('#cantosListPage').bind('pagecreate', function(event) {
 	});
 });
 
-
+var url = '';
 var size = 9;
 var pagina = "";
 var transVisible = 0;
 
 $(document).bind('pageshow', function(event) {
+	if (url != '')
+		$('#start').css({'display': 'block' });	
+				
 	//reset variables
 	transVisible = 0; 
 	size = 9;
 	$('#html_canto').css({
         'min-height': document.body.scrollHeight+'px'
-    });
+    });	
 });
 
+function setUrl(url) {
+	this.url = url;
+}
 function zoomMais() {
 	size++;
 	$('#html_canto').css({
@@ -136,4 +144,100 @@ function transpor(numero){
 	}
 	document.getElementById('html_canto').innerHTML = newHtml;
 	showTrans();
+}
+
+var isPlaying = false;
+var timeControler = 0;
+var readyStateInterval = null;
+var myaudio = new Audio();
+
+function startCont(){
+	$('#music_controls').css({'display': 'block' });	
+	$('#start').css({'display': 'none' });
+	myaudio = new Audio("http://www.cn.org.br/app_ressuscitou/"+url);
+	html5audio.play();
+}
+
+function bttn1() {
+		myaudio.currentTime = myaudio.currentTime - 2 ;
+}
+function bttn2() {
+	if ( isPlaying ) {
+		html5audio.pause();
+	} else {
+		html5audio.play();
+	}
+}
+function bttn3() {
+		html5audio.stop();
+}
+function bttn4() {
+		myaudio.currentTime = myaudio.currentTime + 2 ;
+}
+var html5audio = {
+	play: function(){
+		isPlaying = true;
+		myaudio.play();		
+		myaudio.addEventListener("error", function() {
+			if (window.confirm('Erro!\n Tentar novamente?')) {
+				html5audio.play();
+			}else{
+				$('#music_controls').css({'display': 'none' });	
+				$('#start').css({'display': 'block' });
+			}
+		}, false);
+		myaudio.addEventListener("waiting", function() {
+			isPlaying = false;
+		}, false);
+		myaudio.addEventListener("progress", function() {
+			isPlaying = false;
+		}, false);
+		myaudio.addEventListener("playing", function() {
+			isPlaying = true;
+			startTempo();
+			document.getElementById("imgBtt1").src = "../img/rwnd.png";
+			document.getElementById("imgBtt2").src = "../img/paus.png";
+		}, false);
+		myaudio.addEventListener("ended", function() {
+			html5audio.ended();
+		}, false);
+	},
+	pause: function() {
+		isPlaying = false;
+		myaudio.pause();
+		document.getElementById("imgBtt2").src = "../img/play.png";
+	},
+	stop: function() {
+		myaudio.currentTime = myaudio.duration;
+	},
+	ended: function() {
+		isPlaying = false;
+		document.getElementById("imgBtt2").src = "../img/play.png";	
+	}
+};
+
+function startTempo() {
+	if (timeControler == 0) {
+		timeControler++;
+		tempo();
+	}
+}
+function tempo() {
+		if ( myaudio.ended ){
+			timeControler = 0;
+		}
+		if ( !myaudio.ended ){
+			setTimeout(function () {
+				document.getElementById('progressbar').max = myaudio.duration;
+				document.getElementById('progressbar').value = myaudio.currentTime;
+				tempo();
+			},500);
+		}
+}
+
+function exit() {
+	if ( isPlaying ) {
+		html5audio.pause();	
+	}
+	document.location = "#cantosListPage";	
 }
