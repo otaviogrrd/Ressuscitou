@@ -1,13 +1,24 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body>
-<div id="barra" class="ui-header ui-bar-inherit ui-header-fixed slidedown" role="banner" data-role="header" data-position="fixed"
-data-hide-during-focus=""  data-tap-toggle="false" >
-<a id="voltar" href="#cantosListPage" data-role="button" data-inline="true" >Voltar</a>
-<div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+<div class="barra ui-header ui-bar-inherit ui-header-fixed slidedown" role="banner" data-role="header" data-position="fixed" data-hide-during-focus=""  data-tap-toggle="false" >
+<div data-role="controlgroup"  data-type="horizontal" align="center">
+	<a onClick="exit()"      data-role="button" class="bttn_texto ui-btn" id="voltar">Voltar</a>
+	<a onClick="startCont()" data-role="button" class="bttn_texto ui-btn" id="start" style="display:none"><img class="icon_img" src="../img/msic.png" /></a>
 	<a onclick="autScrl()"   data-role="button" class="bttn_texto ui-btn"><img class="icon_img" src="../img/arrowd.png" /></a>
 	<a onclick="showTrans()" data-role="button" class="bttn_texto ui-btn">Transpor</a>
-	<a onclick="zoomMenos()" data-role="button" class="bttn_texto ui-btn"><img class="icon_img" src="../img/minus.png"  /></a>
+	<a onclick="zoomMenos()" data-role="button" class="bttn_texto ui-btn"><img class="icon_img" src="../img/mins.png"  /></a>
 	<a onclick="zoomMais()"  data-role="button" class="bttn_texto ui-btn"><img class="icon_img" src="../img/plus.png"   /></a>
-</div></div>
+</div>
+</div>
+<div id="music_controls" class="barra ui-header slidedown ui-bar-inherit" style="display:none;text-align: center;">
+	<div class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all" data-role="controlgroup" data-type="horizontal" align="center" style="margin: 0px;">
+		<a role="button" onclick="bttn1()" data-role="button" class="bttn_texto ui-btn"><img id="imgBtt1" class="icon_img" src="../img/rwnd.png" /></a>
+		<a role="button" onclick="bttn2()" data-role="button" class="bttn_texto ui-btn"><img id="imgBtt2" class="icon_img" src="../img/paus.png" /></a>
+		<a role="button" onclick="bttn3()" data-role="button" class="bttn_texto ui-btn"><img id="imgBtt3" class="icon_img" src="../img/stop.png" /></a>
+		<a role="button" onclick="bttn4()" data-role="button" class="bttn_texto ui-btn"><img id="imgBtt4" class="icon_img" src="../img/fwrd.png" /></a>
+		<br/>
+	<progress id="progressbar" ></progress>
+	</div>	
+</div>
 <div id="transDialog"><div id="transInner">
 	<div class="column">
 		<a onclick="transpor(1)"  data-role="button" class="bttn_texto">Do/Do-</a>
@@ -26,10 +37,9 @@ data-hide-during-focus=""  data-tap-toggle="false" >
 		<a onclick="transpor(12)" data-role="button" class="bttn_texto">Si/Si-</a>
 	</div>
 </div></div>
-<div id="html_canto" class="html_canto" style="background-color: #FFFFFF;">
-
+<div id="html_canto" class="html_canto" style="white-space: pre;font-family: 'Cousine', monospace;background-color: #FFFFFF;">
 <FONT COLOR="#FF0000"><H2 ><B>MISERICÓRDIA MINHA, MISERICÓRDIA</B></H2>
-<FONT COLOR="#000000"><PRE><B>Salmo 51(50) "Miserere"</B>
+<FONT COLOR="#000000"><B>Salmo 51(50) "Miserere"</B>
 
 <FONT COLOR="#FF0000">    Re-                  Do    Re-
 <FONT COLOR="#000000">S.  Misericórdia minha, misericórdia.
@@ -97,4 +107,4 @@ A.  <B >DAI-ME DE NOVO UM ESPÍRITO DECIDIDO.
 <FONT COLOR="#FF0000">    Re-                  Do    Re-
 <FONT COLOR="#000000">A.  <B >MISERICÓRDIA MINHA, MISERICÓRDIA ...
                           </B>
-</PRE></div></body></html>
+</div></body></html>
