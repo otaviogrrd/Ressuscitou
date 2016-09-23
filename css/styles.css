@@ -27,14 +27,14 @@ z-index: 1000;
 .ui-listview {
 margin-top: 2.5em !important;
 }
-#barra {
+.barra {
 height: 43px;
 font-family: arial;
 }
-#barra  .ui-title{
-    margin-top: 17px;
+.barra  .ui-title{
+margin-top: 17px;
 }
-#barra .icon_img {
+.barra .icon_img {
 height: 18px;
 }
 
@@ -82,4 +82,18 @@ height: 10px;
 }
 .linha .conteudo{
 display: none;
+}
+#progressbar {
+border: 0px none;
+height: 3px;
+position: relative;
+top: -10px;
+}
+/* latin */
+@font-face {
+  font-family: 'Cousine';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cousine'), url(cousine.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
