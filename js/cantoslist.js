@@ -100,7 +100,7 @@ function transpor(numero){
 	var lines = document.getElementById('html_canto').innerHTML.split('\n');
 	var newHtml = '';
 	
-	for(var i=0;i<lines.length;i++){
+	for( var i = 1; i < lines.length; i++ ){
 		if (lines[i].includes('FF0000')){
 			if (!lines[i].includes('<h2>')) {
 			for(var z=0;z<8;z++) {//repete 8x pra caso tenha notas repetidas na mesma linha
