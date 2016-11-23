@@ -2,6 +2,23 @@
 clear: both;
 padding-bottom: 30px;
 }
+#homeBack{
+margin:0;
+border-radius:0.5em;
+}
+#menu{
+position: absolute;
+width: 100%;
+}
+#menucol{
+margin: auto;
+display: table;
+}
+#hrred{
+background-color: red;
+border-color: red;
+height: 0.15em;
+}
 .ui-li-desc {
 margin: 0px;
 }
@@ -28,7 +45,7 @@ z-index: 1000;
 margin-top: 2.5em !important;
 }
 .barra {
-height: 43px;
+height: 37px;
 font-family: arial;
 }
 .barra  .ui-title{
@@ -59,7 +76,7 @@ margin: auto;
 display: table;
 }
 .column {
-background-color: #212121;
+background-color: #dedede;
 float: left;
 }
 .column .bttn_texto{
@@ -72,6 +89,7 @@ overflow: scroll;
 padding-left: 10px;
 }
 .linha  {
+border-color:white  !important;
 font-family: arial;
 padding: 4px 3px !important;
 font-size: 13px !important;
