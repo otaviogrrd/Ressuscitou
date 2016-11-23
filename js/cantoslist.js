@@ -1,35 +1,66 @@
-$('#cantosListPage').bind('pagecreate', function(event) {
-	$.getJSON('cantos.json', function(data) {
-		
-		$.each(data, function(index, canto) {
-		var categ = '';
-		if(canto.categ === '1'){
-			categ = 'white';
-		}else if(canto.categ === '2'){
-			categ = 'blue';
-		}else if(canto.categ === '3'){
-			categ = 'green';
-		}else if(canto.categ === '4'){
-			categ = 'beige';
-		}
-		
-		$('#cantoslist').append(
-			'<li><a class="linha" onclick="setUrl(\''+canto.url+'\')"' +
-			'href="html/'+canto.html+'.HTML" >' +
-			'<img class="categoria_img" src="img/dot'+categ+'.png" />'+      
-			canto.nome +    
-			'<span class="conteudo"'+canto.url+'</span>'+          
-			'<span class="conteudo">'+canto.conteudo+'</span></a></li>');
-		});
-		
-		$('#cantoslist').listview('refresh');
-	});
-});
-
+var cantos = [];
 var url = '';
 var size = 9;
 var pagina = "";
 var transVisible = 0;
+var menuVisible = 0;
+
+$('#cantosListPage').bind('pagecreate', function(event) {
+	$.getJSON('cantos.json', function(data) {
+		
+		$.each(data, function(index, canto) {
+			cantos.push(canto);			
+		});			
+	});
+	showMenu();
+});
+
+function voltar(){
+	showMenu();
+}
+
+function showMenu(){
+	if (menuVisible == 0 ){
+		menuVisible++;
+		$('#menu').css({'display': 'initial' });	
+		$('#list').css({'display': 'none' });
+		$('#homeBack').css({'display': 'none' });		
+	}else {
+		menuVisible--;
+		$('#menu').css({'display': 'none' });	
+		$('#list').css({'display': 'initial' });
+		$('#homeBack').css({'display': 'initial' });	
+	}
+}
+
+function setCantosList(cat) {		
+	$('#cantoslist').empty();
+	for(var i = 0; i < cantos.length ; i++){
+		var canto = cantos[i];
+		if(canto.categ == cat || cat == '0'){
+			var categ = '';
+			if(canto.categ === '1'){
+				categ = 'white';
+			}else if(canto.categ === '2'){
+				categ = 'blue';
+			}else if(canto.categ === '3'){
+				categ = 'green';
+			}else if(canto.categ === '4'){
+				categ = 'beige';
+			}
+			
+			$('#cantoslist').append(
+				'<li><a class="linha" onclick="setUrl(\''+canto.url+'\')"' +
+				'href="html/'+canto.html+'.HTML" >' +
+				'<img class="categoria_img" src="img/dot'+categ+'.png" />'+      
+				canto.nome +    
+				'<span class="conteudo"'+canto.url+'</span>'+          
+				'<span class="conteudo">'+canto.conteudo+'</span></a></li>');
+		}
+	}	
+	$('#cantoslist').listview('refresh');
+	showMenu();
+}
 
 $(document).bind('pageshow', function(event) {
 	if (url != '')
@@ -100,7 +131,7 @@ function transpor(numero){
 	var lines = document.getElementById('html_canto').innerHTML.split('\n');
 	var newHtml = '';
 	
-	for( var i = 1; i < lines.length; i++ ){
+	for(var i=1;i<lines.length;i++){
 		if (lines[i].includes('FF0000')){
 			if (!lines[i].includes('<h2>')) {
 			for(var z=0;z<8;z++) {//repete 8x pra caso tenha notas repetidas na mesma linha
@@ -139,7 +170,7 @@ function transpor(numero){
 			}
 			
 			}
-		}	
+		}
 		newHtml = newHtml + '\n' + lines[i];		
 	}
 	document.getElementById('html_canto').innerHTML = newHtml;
