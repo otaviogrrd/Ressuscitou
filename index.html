@@ -3,20 +3,32 @@
 	<head>
 		<title>Ressuscitou</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
 		<div id="cantosListPage" data-role="page" >
 		
 			<div id="barra" class="ui-header ui-bar-inherit ui-header-fixed slidedown" role="banner" 
 			data-role="header" data-position="fixed" data-hide-during-focus=""  data-tap-toggle="false" >
-				<h1 style="font-family: arial">Ressuscitou</h1>
+				<a onClick="voltar()" data-role="button" class="bttn_texto ui-btn" id="homeBack">Voltar</a>			
+				<h1 style="font-size: 1.5em;font-family: arial">Ressuscitou</h1>
 			</div>
-					<div data-role="content">
+			<div id="menu">
+			<div id="menucol" style="margin-top:10px">	
+					
+				<a onclick="setCantosList(0)" data-role="button" class="bttn_texto ui-btn" style="border-radius: 0.5em;margin-top:2px">Indice Alfabético</a>
+				<hr id="hrred">
+				<a onclick="setCantosList(1)" data-role="button" class="bttn_texto ui-btn" style="border-radius: 0.5em;margin-top:2px">Pré-Catecumenato</a>
+				<a onclick="setCantosList(2)" data-role="button" class="bttn_texto ui-btn" style="border-radius: 0.5em;margin-top:2px">Catecumenato</a>
+				<a onclick="setCantosList(3)" data-role="button" class="bttn_texto ui-btn" style="border-radius: 0.5em;margin-top:2px">Eleição</a>
+				<a onclick="setCantosList(4)" data-role="button" class="bttn_texto ui-btn" style="border-radius: 0.5em;margin-top:2px">Liturgia</a>
+				
+			</div>
+			</div>
+			<div id="list">			
 		        	<ul id="cantoslist" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." ></ul>
 		    	</div>		
-		
 		</div>
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
