@@ -7,7 +7,6 @@ var menuVisible = 0;
 
 $('#cantosListPage').bind('pagecreate', function(event) {
 	$.getJSON('cantos.json', function(data) {
-		
 		$.each(data, function(index, canto) {
 			cantos.push(canto);			
 		});			
@@ -15,15 +14,12 @@ $('#cantosListPage').bind('pagecreate', function(event) {
 	showMenu();
 });
 
-function voltar(){
-	showMenu();
-}
-
 function showMenu(){
 	if (menuVisible == 0 ){
 		menuVisible++;
 		$('#menu').css({'display': 'initial' });	
 		$('#list').css({'display': 'none' });
+		$('#menulit').css({'display': 'none' });	
 		$('#homeBack').css({'display': 'none' });		
 	}else {
 		menuVisible--;
@@ -33,33 +29,74 @@ function showMenu(){
 	}
 }
 
+function showLiturgico(){
+	menuVisible--;
+	$('#menu').css({'display': 'none' });	
+	$('#menulit').css({'display': 'initial' });		
+	$('#homeBack').css({'display': 'initial' });
+}
+
 function setCantosList(cat) {		
 	$('#cantoslist').empty();
 	for(var i = 0; i < cantos.length ; i++){
 		var canto = cantos[i];
-		if(canto.categ == cat || cat == '0'){
-			var categ = '';
-			if(canto.categ === '1'){
-				categ = 'white';
-			}else if(canto.categ === '2'){
-				categ = 'blue';
-			}else if(canto.categ === '3'){
-				categ = 'green';
-			}else if(canto.categ === '4'){
-				categ = 'beige';
-			}
-			
-			$('#cantoslist').append(
-				'<li><a class="linha" onclick="setUrl(\''+canto.url+'\')"' +
-				'href="html/'+canto.html+'.HTML" >' +
-				'<img class="categoria_img" src="img/dot'+categ+'.png" />'+      
-				canto.nome +    
-				'<span class="conteudo"'+canto.url+'</span>'+          
-				'<span class="conteudo">'+canto.conteudo+'</span></a></li>');
+		if(canto.categ == cat || cat == '0'){	
+			addCanto(canto);
 		}
 	}	
 	$('#cantoslist').listview('refresh');
 	showMenu();
+}
+
+function setCantosLit(lit) {		
+	$('#cantoslist').empty();
+	for(var i = 0; i < cantos.length ; i++){
+		var canto = cantos[i];
+		var adiciona = '';
+		switch(lit) {
+		    	case 'PAZ'           :if ( canto.PAZ            == 'true' ){ adiciona = 'true';}break;
+		    	case 'NATAL'         :if ( canto.NATAL          == 'true' ){ adiciona = 'true';}break;
+		    	case 'PASCOA'        :if ( canto.PASCOA         == 'true' ){ adiciona = 'true';}break;
+		    	case 'FINAL'         :if ( canto.FINAL          == 'true' ){ adiciona = 'true';}break;
+		    	case 'COMUNHAO'      :if ( canto.COMUNHAO       == 'true' ){ adiciona = 'true';}break;
+		    	case 'ADVENTO'       :if ( canto.ADVENTO        == 'true' ){ adiciona = 'true';}break;
+		    	case 'LAUVESP'       :if ( canto.LAUVESP        == 'true' ){ adiciona = 'true';}break;
+		    	case 'ENTRADA' 	     :if ( canto.ENTRADA        == 'true' ){ adiciona = 'true';}break;
+		    	case 'QUARESMA'      :if ( canto.QUARESMA       == 'true' ){ adiciona = 'true';}break;
+		    	case 'FRACAOPAO'     :if ( canto.FRACAOPAO      == 'true' ){ adiciona = 'true';}break;
+		    	case 'PENTECOSTES'   :if ( canto.PENTECOSTES    == 'true' ){ adiciona = 'true';}break;
+		    	case 'CANTOSVIRGEM'  :if ( canto.CANTOSVIRGEM   == 'true' ){ adiciona = 'true';}break;
+		    	case 'CANTOSCRIANCAS':if ( canto.CANTOSCRIANCAS == 'true' ){ adiciona = 'true';}break;
+		    	default: adiciona = '';
+		}
+	   	if ( adiciona == 'true' ){
+	    		addCanto(canto);	    	
+	    	}
+	}	
+	$('#cantoslist').listview('refresh');
+	$('#list').css({'display': 'initial' });
+	$('#menulit').css({'display': 'none' });
+}
+
+function addCanto(canto){
+	var categ = '';
+	if(canto.categ === '1'){
+		categ = 'white';
+	}else if(canto.categ === '2'){
+		categ = 'blue';
+	}else if(canto.categ === '3'){
+		categ = 'green';
+	}else if(canto.categ === '4'){
+		categ = 'beige';
+	}
+	$('#cantoslist').append(
+		'<li><a class="linha" onclick="setUrl(\''+canto.url+'\')"' +
+		'href="html/'+canto.html+'.HTML" >' +
+		'<img class="categoria_img" src="img/dot'+categ+'.png" />'+      
+		canto.nome +    
+		'<span class="conteudo"'+canto.url+'</span>'+          
+		'<span class="conteudo">'+canto.conteudo+'</span></a></li>'
+	);
 }
 
 $(document).bind('pageshow', function(event) {
@@ -141,7 +178,7 @@ function transpor(numero){
 				}
 			}
 			
-			// Lógica para descobrir a primeira nota:
+			// L贸gica para descobrir a primeira nota:
 			if (pri == 99) {
 				var x = "@";
 				for(var j = 0; j< lines[i].length;j++) {
