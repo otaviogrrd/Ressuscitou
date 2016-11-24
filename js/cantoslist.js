@@ -223,7 +223,15 @@ function startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
 	var allurl = "http://app_access:g23#r2%LP02gt%fsrt@www.cn.org.br/app_ressuscitou/"+url;
-	window.confirm('Erro!\n'+allurl);
+	var http = getHTTPObject();
+    http.open("get", allurl, false);
+    http.send("");
+	if (http.status == 200) {
+		document.location = allurl;
+	} else {
+        alert("Incorrect username and/or password!");
+    }
+	window.confirm('Url:\n <a>'+allurl+'</a>');
 	myaudio = new Audio(allurl);
 	html5audio.play();
 }
