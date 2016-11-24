@@ -4140,7 +4140,7 @@ textarea.ui-mini {
 .ui-input-text.ui-input-has-clear .ui-btn.ui-input-clear {
 	position: absolute;
 	right: 0;
-	top: 50%;
+	top: 60%;
 	margin: -14px .3125em 0;
 	border: 0;
 	background-color: transparent;
