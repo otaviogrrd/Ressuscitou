@@ -223,20 +223,6 @@ function startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
 	var strUrl = "http://www.cn.org.br/app_ressuscitou/"+url;
-	var http = getHTTPObject();
-    	 http.open("get", strUrl, false, "app_access", "g23#r2%LP02gt%fsrt");
-  http.send("");
-  if (http.status == 200) {
-    alert("logou!");
-  } else {
-    alert("Incorrect username and/or password!");
-  }
-	//http.open("GET", allurl, true);
-    	//http.send("");
-	//if (http.status == 200) {
-        //   alert("Logado!");
-    	//}
-	//http://www.cn.org.br/portal/wp-content/uploads/2016/11/Canto_Como_Ovelha_que_ve_2017.mp3'
 	myaudio = new Audio(strUrl);
 	html5audio.play();
 }
