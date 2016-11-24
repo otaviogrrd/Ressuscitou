@@ -222,14 +222,14 @@ var myaudio = new Audio();
 function startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
-	var allurl = "http://app_access:g23#r2%LP02gt%fsrt@www.cn.org.br/app_ressuscitou/"+url;
-	var http = getHTTPObject();
-    	http.open("GET", allurl, true);
-    	http.send("");
-	if (http.status == 200) {
-		alert("Logado!");
-    	}
-	myaudio = new Audio("http://www.cn.org.br/app_ressuscitou/"+url);
+	//var allurl = "http://app_access:g23#r2%LP02gt%fsrt@www.cn.org.br/app_ressuscitou/"+url;
+	//var http = getHTTPObject();
+    	//http.open("GET", allurl, true);
+    	//http.send("");
+	//if (http.status == 200) {
+        //   alert("Logado!");
+    	//}
+	myaudio = new Audio('http://www.cn.org.br/portal/wp-content/uploads/2016/11/Canto_Como_Ovelha_que_ve_2017.mp3');//"http://www.cn.org.br/app_ressuscitou/"+url);
 	html5audio.play();
 }
 
