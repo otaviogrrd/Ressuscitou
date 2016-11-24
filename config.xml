@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="br.org.cn.ressuscitou" version="1.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="br.org.cn.ressuscitou_ios" version="1.0">
   <name>Ressuscitou</name>
   <description>Cantos do Caminho Neocatecumenal</description>
   <author href="http://www.cn.org.br/" email="otavio.grrd@gmail.com">Caminho Neocatecumenal no Brasil</author>
@@ -8,6 +8,9 @@
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
+  <platform name="android">
+      <allow-intent href="market:*" />
+  </platform>
   <platform name="ios">
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
