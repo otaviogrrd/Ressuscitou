@@ -222,7 +222,7 @@ var myaudio = new Audio();
 function startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
-	myaudio = new Audio("http://www.cn.org.br/app_ressuscitou/"+url);
+	myaudio = new Audio("http://www.cn.org.br/app_ressuscitou/"+url+"?Authorization=YXBwX2FjY2VzczpnMjMjcjIlTFAwMmd0JWZzcnQ");
 	html5audio.play();
 }
 
