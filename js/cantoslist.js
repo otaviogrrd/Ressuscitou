@@ -100,11 +100,9 @@ function addCanto(canto){
 }
 
 $(document).bind('pageshow', function(event) {
-	if (url != ''){
-		if ( window.navigator.onLine ){
-			$('#start').css({'display': 'block' });	
-		}
-	}			
+	if (url != '')
+		$('#start').css({'display': 'block' });	
+				
 	//reset variables
 	transVisible = 0; 
 	size = 9;
@@ -225,6 +223,7 @@ function startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
 	var strUrl = "http://www.cn.org.br/app_ressuscitou/"+url;
+	//var strUrl = "http://www.imaculadaconceicaodf.com.br/ressuscitou/teste/"+url;
 	myaudio = new Audio(strUrl);
 	html5audio.play();
 }
