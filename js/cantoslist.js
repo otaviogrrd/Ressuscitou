@@ -306,8 +306,8 @@ function tempo() {
 }
 
 function exit() {
-	if ( isPlaying ) {
-		html5audio.pause();	
-	}
+	//if ( isPlaying ) {
+	html5audio.pause();	
+	//}
 	document.location = "#cantosListPage";	
 }
