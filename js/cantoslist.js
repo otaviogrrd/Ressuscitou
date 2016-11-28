@@ -100,9 +100,11 @@ function addCanto(canto){
 }
 
 $(document).bind('pageshow', function(event) {
-	if (url != '')
-		$('#start').css({'display': 'block' });	
-				
+	if (url != ''){
+		if ( window.navigator.onLine ){
+			$('#start').css({'display': 'block' });	
+		}
+	}			
 	//reset variables
 	transVisible = 0; 
 	size = 9;
