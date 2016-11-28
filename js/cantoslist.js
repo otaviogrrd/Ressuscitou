@@ -229,6 +229,7 @@ function startCont(){
 }
 
 function bttn1() {
+	if ( myaudio.currentTime > 2 )
 		myaudio.currentTime = myaudio.currentTime - 2 ;
 }
 function bttn2() {
@@ -242,6 +243,7 @@ function bttn3() {
 		html5audio.stop();
 }
 function bttn4() {
+	if ( ( myaudio.currentTime + 2 ) < ( myaudio.duration - 3 ) )
 		myaudio.currentTime = myaudio.currentTime + 2 ;
 }
 var html5audio = {
