@@ -178,7 +178,7 @@ function transpor(numero){
 				}
 			}
 			
-			// L贸gica para descobrir a primeira nota:
+			// L韐經ica para descobrir a primeira nota:
 			if (pri == 99) {
 				var x = "@";
 				for(var j = 0; j< lines[i].length;j++) {
@@ -218,18 +218,26 @@ var isPlaying = false;
 var timeControler = 0;
 var readyStateInterval = null;
 var myaudio = new Audio();
+var strUrl = '';
+var tentativas = 0;
 
 function startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
-	var strUrl = "http://www.cn.org.br/app_ressuscitou/"+url;
-	//var strUrl = "http://www.imaculadaconceicaodf.com.br/ressuscitou/teste/"+url;
+	strUrl = "";
+	originMp3();
+}
+function originMp3() {
+	if (strUrl == "http://www.cn.org.br/app_ressuscitou/"+url){
+		strUrl = "http://www.imaculadaconceicaodf.com.br/ressuscitou/mp3/"+url;
+	}else{
+		strUrl = "http://www.cn.org.br/app_ressuscitou/"+url;
+	}
 	myaudio = new Audio(strUrl);
 	html5audio.play();
 }
 
 function bttn1() {
-	if ( myaudio.currentTime > 2 )
 		myaudio.currentTime = myaudio.currentTime - 2 ;
 }
 function bttn2() {
@@ -243,7 +251,6 @@ function bttn3() {
 		html5audio.stop();
 }
 function bttn4() {
-	if ( ( myaudio.currentTime + 2 ) < ( myaudio.duration - 3 ) )
 		myaudio.currentTime = myaudio.currentTime + 2 ;
 }
 var html5audio = {
@@ -251,12 +258,18 @@ var html5audio = {
 		isPlaying = true;
 		myaudio.play();		
 		myaudio.addEventListener("error", function() {
+		if (tentativas < 3){
+			originMp3();
+			tentativas++;
+		}else{
 			if (window.confirm('Erro de conexão com o servidor\n Tentar novamente?')) {
-				html5audio.play();
+				originMp3();
 			}else{
 				$('#music_controls').css({'display': 'none' });	
 				$('#start').css({'display': 'block' });
 			}
+			tentativas = 0;
+		}
 		}, false);
 		myaudio.addEventListener("waiting", function() {
 			isPlaying = false;
@@ -308,8 +321,8 @@ function tempo() {
 }
 
 function exit() {
-	//if ( isPlaying ) {
-	html5audio.pause();	
-	//}
+	if ( isPlaying ) {
+		html5audio.pause();	
+	}
 	document.location = "#cantosListPage";	
 }
