@@ -251,7 +251,7 @@ var html5audio = {
 		isPlaying = true;
 		myaudio.play();		
 		myaudio.addEventListener("error", function() {
-			if (window.confirm('Erro!\n Tentar novamente?')) {
+			if (window.confirm('Erro de conexão com o servidor\n Tentar novamente?')) {
 				html5audio.play();
 			}else{
 				$('#music_controls').css({'display': 'none' });	
