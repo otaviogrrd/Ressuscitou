@@ -228,10 +228,12 @@ function startCont(){
 	originMp3();
 }
 function originMp3() {
-	if (strUrl == "http://www.cn.org.br/app_ressuscitou/"+url){
+	if (strUrl == "https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/audios/"+url){
+		strUrl = "http://www.cn.org.br/app_ressuscitou/"+url;
+	}elseif (strUrl == "http://www.cn.org.br/app_ressuscitou/"+url){
 		strUrl = "http://www.imaculadaconceicaodf.com.br/ressuscitou/mp3/"+url;
 	}else{
-		strUrl = "http://www.cn.org.br/app_ressuscitou/"+url;
+		strUrl == "https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/audios/"+url
 	}
 	myaudio = new Audio(strUrl);
 	html5audio.play();
