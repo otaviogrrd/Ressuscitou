@@ -70,6 +70,10 @@ height: 16px;
 .zoom{    
 padding: 3px 12px !important;
 }
+#music_controls{
+position: absolute;
+width: 100%;
+}
 #transDialog{
 display: none;
 position: absolute;
