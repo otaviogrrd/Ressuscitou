@@ -6,9 +6,7 @@ var transVisible = 0;
 var menuVisible = 0;
 
 var isPlaying = false;
-var isPause = true;
 var timeControler = 0;
-var readyStateInterval = null;
 var myaudio = new Audio();
 var strUrl = '';
 var tentativas = 0;
@@ -246,14 +244,10 @@ function bttn1() {
 		myaudio.currentTime = myaudio.currentTime - 2 ;
 }
 function bttn2() {
-	if ( isPlaying && isPause == false) {
+	if ( isPlaying ) {
 		html5audio.pause();
-		isPause = true;
-		isPlaying = false;
 	} else {
 		html5audio.play();
-		isPause = false;
-		isPlaying = true;
 	}
 }
 function bttn3() {
@@ -298,6 +292,7 @@ var html5audio = {
 	},
 	pause: function() {
 		timeControler = 0;
+		isPlaying = false;
 		myaudio.pause();
 		document.getElementById("imgBtt2").src = "../img/play.png";
 	},
@@ -306,6 +301,7 @@ var html5audio = {
 		myaudio.currentTime = 0;
 	},
 	ended: function() {
+		timeControler = 0;
 		isPlaying = false;
 		document.getElementById("imgBtt2").src = "../img/play.png";	
 	}
@@ -318,16 +314,12 @@ function startTempo() {
 	}
 }
 function tempo() {
-		if ( myaudio.ended ){
-			timeControler = 0;
-		}
-		if ( !myaudio.ended && isPlaying && !isPause ){
+		if ( !myaudio.ended ){
 			setTimeout(function () {
 				if ( myaudio.duration > 0){
 					document.getElementById('progressbar').max = myaudio.duration;
 				}
 				if ( myaudio.currentTime > 0 ){
-					isPlaying = true;
 					document.getElementById('progressbar').value = myaudio.currentTime;
 				}
 				tempo();
@@ -336,8 +328,6 @@ function tempo() {
 }
 
 function exit() {
-	if ( isPlaying ) {
-		html5audio.pause();	
-	}
+	html5audio.pause();	
 	document.location = "#cantosListPage";	
 }
