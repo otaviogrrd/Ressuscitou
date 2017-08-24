@@ -261,7 +261,7 @@ function bttn4() {
 }
 var html5audio = {
 	play: function(){
-		isPlaying = true;
+		//isPlaying = true;
 		myaudio.play();		
 		myaudio.addEventListener("error", function() {
 		if (tentativas < 3){
@@ -320,7 +320,7 @@ function tempo() {
 		}
 		if ( !myaudio.ended && isPlaying == true ){
 			setTimeout(function () {
-				if ( myaudio.duration != null){
+				if ( myaudio.duration > 0){
 					max = myaudio.duration;
 					document.getElementById('progressbar').max = max;
 				}
