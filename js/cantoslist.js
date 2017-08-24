@@ -112,6 +112,7 @@ $(document).bind('pageshow', function(event) {
 				
 	//reset variables
 	transVisible = 0; 
+	ctrlVisible = 0;
 	size = 9;
 	$('#html_canto').css({
         'min-height': document.body.scrollHeight+'px'
