@@ -141,6 +141,7 @@ function autScrl() {
 	descer(window.pageYOffset);
 	window.scrollTo(0, inicial);
 };
+
 function descer(i) {
 	if ( window.location.href === pagina ){
 		setTimeout(function () { 
@@ -154,6 +155,7 @@ function descer(i) {
 		},500);
 	}
 }
+
 function showTrans(){
 	if (transVisible == 0 ){
 		transVisible++;
@@ -166,7 +168,7 @@ function showTrans(){
 }
 
 function posTrans(){
-		$('#transDialog').css({'margin-top' : 10 + window.pageYOffset+'px' });	
+	$('#transDialog').css({'margin-top' : 25 + window.pageYOffset+'px' });	
 }
 
 var escalaTmp = ["zerofiller","@01","@02","@03","@04","@05","@06","@07","@08","@09","@10","@11","@12" ];
@@ -230,6 +232,21 @@ function startCont(){
 	strUrl = "";
 	originMp3();
 }
+
+function descer(i) {
+	if ( window.location.href === pagina ){
+		setTimeout(function () { 
+			var pos = window.pageYOffset;
+			pos++;
+			if (pos < i) {
+				$('#music_controls').css({'margin-top' : 10 + window.pageYOffset+'px' });	
+				descer(i);
+			}
+		},500);
+	}
+}
+
+
 function originMp3() {
 	if (strUrl == "https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/audios/"+url) {
 		strUrl = "http://www.cn.org.br/app_ressuscitou/"+url;
