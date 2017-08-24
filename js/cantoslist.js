@@ -309,7 +309,7 @@ var html5audio = {
 };
 
 function startTempo() {
-	if (timeControler == 0 || max = 0) {
+	if (timeControler == 0 || max == 0) {
 		timeControler++;
 		tempo();
 	}
