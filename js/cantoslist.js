@@ -3,6 +3,7 @@ var url = '';
 var size = 9;
 var pagina = "";
 var transVisible = 0;
+var ctrlVisible = 0;
 var menuVisible = 0;
 
 var isPlaying = false;
@@ -156,19 +157,54 @@ function descer(i) {
 	}
 }
 
+function startCont(){
+	if (ctrlVisible == 0 ){
+		ctrlVisible++;
+		$('#music_controls').css({'display': 'block' });	
+		$('#start').css({'display': 'none' });
+		strUrl = "";
+		originMp3();
+		updatePos();
+	}else {
+		ctrlVisible--;
+		$('#music_controls').css({'display': 'none' });			
+		$('#start').css({'display': 'initial' });
+	}
+}
+
+
 function showTrans(){
 	if (transVisible == 0 ){
 		transVisible++;
 		$('#transDialog').css({'display': 'initial' });	
-		posTrans();
+		updatePos();
 	}else {
 		transVisible--;
 		$('#transDialog').css({'display': 'none' });	
 	}
 }
 
+function updatePos() {
+	if (transVisible > 0 ){
+		setTimeout(function () { 
+			posTrans();
+			updatePos();
+		},500);
+	}
+	if (ctrlVisible > 0 ){
+		setTimeout(function () { 
+			posCtrl();
+			updatePos();
+		},500);
+	}
+	
+}
+
 function posTrans(){
-	$('#transDialog').css({'margin-top' : 25 + window.pageYOffset+'px' });	
+	$('#transDialog').css({'margin-top' : 50 + window.pageYOffset+'px' });	
+}
+function posCtrl(){
+	$('#music_controls').css({'margin-top' : 9 + window.pageYOffset+'px' });
 }
 
 var escalaTmp = ["zerofiller","@01","@02","@03","@04","@05","@06","@07","@08","@09","@10","@11","@12" ];
@@ -225,28 +261,6 @@ function transpor(numero){
 	document.getElementById('html_canto').innerHTML = newHtml;
 	showTrans();
 }
-
-function startCont(){
-	$('#music_controls').css({'display': 'block' });	
-	$('#start').css({'display': 'none' });
-	strUrl = "";
-	originMp3();
-	controlPos(window.pageYOffset);
-}
-
-function controlPos(i) {
-	if ( window.location.href === pagina ){
-		setTimeout(function () { 
-			var pos = window.pageYOffset;
-			pos++;
-			if (pos < i) {
-				$('#music_controls').css({'margin-top' : 10 + window.pageYOffset+'px' });	
-				controlPos(i);
-			}
-		},500);
-	}
-}
-
 
 function originMp3() {
 	if (strUrl == "https://raw.githubusercontent.com/otaviogrrd/Ressuscitou_Android/master/audios/"+url) {
@@ -325,7 +339,8 @@ var html5audio = {
 	ended: function() {
 		timeControler = 0;
 		isPlaying = false;
-		document.getElementById("imgBtt2").src = "../img/play.png";	
+		document.getElementById("imgBtt2").src = "../img/play.png";
+		startCont();
 	}
 };
 
