@@ -220,8 +220,9 @@ var readyStateInterval = null;
 var myaudio = new Audio();
 var strUrl = '';
 var tentativas = 0;
+var max = 0;
 
-function startCont(){
+maxfunction startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
 	strUrl = "";
@@ -308,7 +309,7 @@ var html5audio = {
 };
 
 function startTempo() {
-	if (timeControler == 0) {
+	if (timeControler == 0 || max = 0) {
 		timeControler++;
 		tempo();
 	}
@@ -319,7 +320,8 @@ function tempo() {
 		}
 		if ( !myaudio.ended ){
 			setTimeout(function () {
-				document.getElementById('progressbar').max = myaudio.duration;
+				max = myaudio.duration;
+				document.getElementById('progressbar').max = max;
 				document.getElementById('progressbar').value = myaudio.currentTime;
 				tempo();
 			},500);
