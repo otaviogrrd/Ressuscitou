@@ -324,7 +324,7 @@ function tempo() {
 				if ( myaudio.duration > 0){
 					document.getElementById('progressbar').max = myaudio.duration;
 				}
-				if (  myaudio.currentTime > 0 ){
+				if (  myaudio.currentTime > 0 && isPlaying == true ){
 					isPlaying = true;
 					document.getElementById('progressbar').value = myaudio.currentTime;
 				}
