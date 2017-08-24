@@ -201,10 +201,10 @@ function updatePos() {
 }
 
 function posTrans(){
-	$('#transDialog').css({'margin-top' : 50 + window.pageYOffset+'px' });	
+	$('#transDialog').css({'margin-top' : 45 + window.pageYOffset+'px' });	
 }
 function posCtrl(){
-	$('#music_controls').css({'margin-top' : 1 + window.pageYOffset+'px' });
+	$('#music_controls').css({'margin-top' : 5 + window.pageYOffset+'px' });
 }
 
 var escalaTmp = ["zerofiller","@01","@02","@03","@04","@05","@06","@07","@08","@09","@10","@11","@12" ];
