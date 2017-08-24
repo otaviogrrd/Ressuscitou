@@ -157,6 +157,7 @@ function descer(i) {
 function showTrans(){
 	if (transVisible == 0 ){
 		transVisible++;
+		$('#transDialog').css({'display': 'initial' });	
 		posTrans();
 	}else {
 		transVisible--;
@@ -165,7 +166,6 @@ function showTrans(){
 }
 
 function posTrans(){
-		$('#transDialog').css({'display': 'initial' });	
 		$('#transDialog').css({'margin-top' : 10 + window.pageYOffset+'px' });	
 }
 
