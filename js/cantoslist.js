@@ -140,6 +140,7 @@ function autScrl() {
 	window.scrollTo(0, document.body.scrollHeight);
 	descer(window.pageYOffset);
 	window.scrollTo(0, inicial);
+	posTrans();
 };
 function descer(i) {
 	if ( window.location.href === pagina ){
@@ -153,16 +154,19 @@ function descer(i) {
 		},500);
 	}
 }
-
 function showTrans(){
 	if (transVisible == 0 ){
 		transVisible++;
-		$('#transDialog').css({'display': 'initial' });	
-		$('#transDialog').css({'margin-top' : 10 + window.pageYOffset+'px' });	
+		posTrans();
 	}else {
 		transVisible--;
 		$('#transDialog').css({'display': 'none' });	
 	}
+}
+
+function posTrans(){
+		$('#transDialog').css({'display': 'initial' });	
+		$('#transDialog').css({'margin-top' : 10 + window.pageYOffset+'px' });	
 }
 
 var escalaTmp = ["zerofiller","@01","@02","@03","@04","@05","@06","@07","@08","@09","@10","@11","@12" ];
@@ -184,7 +188,7 @@ function transpor(numero){
 				}
 			}
 			
-			// L韐經ica para descobrir a primeira nota:
+			// Lógica para descobrir a primeira nota:
 			if (pri == 99) {
 				var x = "@";
 				for(var j = 0; j< lines[i].length;j++) {
