@@ -282,7 +282,7 @@ var html5audio = {
 			isPlaying = false;
 		}, false);
 		myaudio.addEventListener("progress", function() {
-			isPlaying = false;
+			//isPlaying = false;
 		}, false);
 		myaudio.addEventListener("playing", function() {
 			isPlaying = true;
