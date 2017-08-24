@@ -6,12 +6,12 @@ var transVisible = 0;
 var menuVisible = 0;
 
 var isPlaying = false;
+var isPause = true;
 var timeControler = 0;
 var readyStateInterval = null;
 var myaudio = new Audio();
 var strUrl = '';
 var tentativas = 0;
-var max = 0;
 
 $('#cantosListPage').bind('pagecreate', function(event) {
 	$.getJSON('cantos.json', function(data) {
@@ -246,10 +246,14 @@ function bttn1() {
 		myaudio.currentTime = myaudio.currentTime - 2 ;
 }
 function bttn2() {
-	if ( isPlaying ) {
+	if ( isPlaying && isPause == false) {
 		html5audio.pause();
+		isPause = true;
+		isPlaying = false;
 	} else {
 		html5audio.play();
+		isPause = false;
+		isPlaying = true;
 	}
 }
 function bttn3() {
@@ -293,13 +297,11 @@ var html5audio = {
 		}, false);
 	},
 	pause: function() {
-		isPlaying = false;
 		timeControler = 0;
 		myaudio.pause();
 		document.getElementById("imgBtt2").src = "../img/play.png";
 	},
 	stop: function() {
-		//myaudio.currentTime = myaudio.duration;
 		timeControler = 0;
 		myaudio.currentTime = 0;
 	},
@@ -319,12 +321,12 @@ function tempo() {
 		if ( myaudio.ended ){
 			timeControler = 0;
 		}
-		if ( !myaudio.ended && isPlaying == true ){
+		if ( !myaudio.ended && isPlaying && !isPause ){
 			setTimeout(function () {
 				if ( myaudio.duration > 0){
 					document.getElementById('progressbar').max = myaudio.duration;
 				}
-				if (  myaudio.currentTime > 0 && isPlaying == true ){
+				if ( myaudio.currentTime > 0 ){
 					isPlaying = true;
 					document.getElementById('progressbar').value = myaudio.currentTime;
 				}
