@@ -320,8 +320,10 @@ function tempo() {
 		}
 		if ( !myaudio.ended ){
 			setTimeout(function () {
-				max = myaudio.duration;
-				document.getElementById('progressbar').max = max;
+				if ( myaudio.duration != null){
+					max = myaudio.duration;
+					document.getElementById('progressbar').max = max;
+				}
 				document.getElementById('progressbar').value = myaudio.currentTime;
 				tempo();
 			},500);
