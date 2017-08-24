@@ -261,7 +261,6 @@ function bttn4() {
 }
 var html5audio = {
 	play: function(){
-		//isPlaying = true;
 		myaudio.play();		
 		myaudio.addEventListener("error", function() {
 		if (tentativas < 3){
@@ -295,11 +294,13 @@ var html5audio = {
 	},
 	pause: function() {
 		isPlaying = false;
+		timeControler = 0;
 		myaudio.pause();
 		document.getElementById("imgBtt2").src = "../img/play.png";
 	},
 	stop: function() {
 		//myaudio.currentTime = myaudio.duration;
+		timeControler = 0;
 		myaudio.currentTime = 0;
 	},
 	ended: function() {
@@ -309,7 +310,7 @@ var html5audio = {
 };
 
 function startTempo() {
-	if (timeControler == 0 || max == 0) {
+	if (timeControler == 0) {
 		timeControler++;
 		tempo();
 	}
@@ -321,8 +322,7 @@ function tempo() {
 		if ( !myaudio.ended && isPlaying == true ){
 			setTimeout(function () {
 				if ( myaudio.duration > 0){
-					max = myaudio.duration;
-					document.getElementById('progressbar').max = max;
+					document.getElementById('progressbar').max = myaudio.duration;
 				}
 				if (  myaudio.currentTime > 0 ){
 					isPlaying = true;
