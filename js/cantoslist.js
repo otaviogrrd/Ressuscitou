@@ -157,6 +157,7 @@ function descer(i) {
 function showTrans(){
 	if (transVisible == 0 ){
 		transVisible++;
+		$('#transDialog').css({'display': 'initial' });	
 		posTrans();
 	}else {
 		transVisible--;
@@ -165,8 +166,7 @@ function showTrans(){
 }
 
 function posTrans(){
-		$('#transDialog').css({'display': 'initial' });	
-		$('#transDialog').css({'margin-top' : 10 + window.pageYOffset+'px' });	
+	$('#transDialog').css({'margin-top' : 10 + window.pageYOffset+'px' });	
 }
 
 var escalaTmp = ["zerofiller","@01","@02","@03","@04","@05","@06","@07","@08","@09","@10","@11","@12" ];
