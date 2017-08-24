@@ -324,7 +324,10 @@ function tempo() {
 					max = myaudio.duration;
 					document.getElementById('progressbar').max = max;
 				}
-				document.getElementById('progressbar').value = myaudio.currentTime;
+				if (  myaudio.currentTime > 0 ){
+					isPlaying = true;
+					document.getElementById('progressbar').value = myaudio.currentTime;
+				}
 				tempo();
 			},500);
 		}
