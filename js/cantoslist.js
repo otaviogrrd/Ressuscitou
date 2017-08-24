@@ -5,6 +5,14 @@ var pagina = "";
 var transVisible = 0;
 var menuVisible = 0;
 
+var isPlaying = false;
+var timeControler = 0;
+var readyStateInterval = null;
+var myaudio = new Audio();
+var strUrl = '';
+var tentativas = 0;
+var max = 0;
+
 $('#cantosListPage').bind('pagecreate', function(event) {
 	$.getJSON('cantos.json', function(data) {
 		$.each(data, function(index, canto) {
@@ -214,14 +222,6 @@ function transpor(numero){
 	showTrans();
 }
 
-var isPlaying = false;
-var timeControler = 0;
-var readyStateInterval = null;
-var myaudio = new Audio();
-var strUrl = '';
-var tentativas = 0;
-var max = 0;
-
 function startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
@@ -318,7 +318,7 @@ function tempo() {
 		if ( myaudio.ended ){
 			timeControler = 0;
 		}
-		if ( !myaudio.ended ){
+		if ( !myaudio.ended && isPlaying == true ){
 			setTimeout(function () {
 				if ( myaudio.duration != null){
 					max = myaudio.duration;
