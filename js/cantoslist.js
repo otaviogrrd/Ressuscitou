@@ -189,13 +189,13 @@ function updatePos() {
 		setTimeout(function () { 
 			posTrans();
 			updatePos();
-		},1);
+		},100);
 	}
 	if (ctrlVisible > 0 ){
 		setTimeout(function () { 
 			posCtrl();
 			updatePos();
-		},1);
+		},100);
 	}
 	
 }
