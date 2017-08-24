@@ -252,6 +252,7 @@ function bttn2() {
 	}
 }
 function bttn3() {
+		html5audio.pause();
 		html5audio.stop();
 }
 function bttn4() {
@@ -297,7 +298,8 @@ var html5audio = {
 		document.getElementById("imgBtt2").src = "../img/play.png";
 	},
 	stop: function() {
-		myaudio.currentTime = myaudio.duration;
+		//myaudio.currentTime = myaudio.duration;
+		myaudio.currentTime = 0;
 	},
 	ended: function() {
 		isPlaying = false;
