@@ -231,16 +231,17 @@ function startCont(){
 	$('#start').css({'display': 'none' });
 	strUrl = "";
 	originMp3();
+	controlPos(window.pageYOffset);
 }
 
-function descer(i) {
+function controlPos(i) {
 	if ( window.location.href === pagina ){
 		setTimeout(function () { 
 			var pos = window.pageYOffset;
 			pos++;
 			if (pos < i) {
 				$('#music_controls').css({'margin-top' : 10 + window.pageYOffset+'px' });	
-				descer(i);
+				controlPos(i);
 			}
 		},500);
 	}
