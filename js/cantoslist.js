@@ -140,7 +140,6 @@ function autScrl() {
 	window.scrollTo(0, document.body.scrollHeight);
 	descer(window.pageYOffset);
 	window.scrollTo(0, inicial);
-	posTrans();
 };
 function descer(i) {
 	if ( window.location.href === pagina ){
@@ -150,6 +149,7 @@ function descer(i) {
 			if (pos < i) {
 				window.scrollTo(0, pos);
 				descer(i);
+				posTrans();
 			}
 		},500);
 	}
