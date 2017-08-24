@@ -311,7 +311,7 @@ var html5audio = {
 		}
 		}, false);
 		myaudio.addEventListener("waiting", function() {
-			isPlaying = false;
+			//isPlaying = false;
 		}, false);
 		myaudio.addEventListener("progress", function() {
 			//isPlaying = false;
