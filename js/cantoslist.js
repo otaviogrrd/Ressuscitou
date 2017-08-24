@@ -222,7 +222,7 @@ var strUrl = '';
 var tentativas = 0;
 var max = 0;
 
-maxfunction startCont(){
+function startCont(){
 	$('#music_controls').css({'display': 'block' });	
 	$('#start').css({'display': 'none' });
 	strUrl = "";
