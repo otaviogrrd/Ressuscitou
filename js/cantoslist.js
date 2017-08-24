@@ -189,13 +189,13 @@ function updatePos() {
 		setTimeout(function () { 
 			posTrans();
 			updatePos();
-		},500);
+		},1);
 	}
 	if (ctrlVisible > 0 ){
 		setTimeout(function () { 
 			posCtrl();
 			updatePos();
-		},500);
+		},1);
 	}
 	
 }
@@ -204,7 +204,7 @@ function posTrans(){
 	$('#transDialog').css({'margin-top' : 50 + window.pageYOffset+'px' });	
 }
 function posCtrl(){
-	$('#music_controls').css({'margin-top' : 9 + window.pageYOffset+'px' });
+	$('#music_controls').css({'margin-top' : 1 + window.pageYOffset+'px' });
 }
 
 var escalaTmp = ["zerofiller","@01","@02","@03","@04","@05","@06","@07","@08","@09","@10","@11","@12" ];
