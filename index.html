@@ -1,52 +1,21 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Ressuscitou</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
-		<link rel="stylesheet" href="css/styles.css" />
-	</head>
-	<body>
-		<div id="cantosListPage" data-role="page" >
-			<div id="barra" class="ui-header ui-bar-inherit ui-header-fixed slidedown" role="banner" 
-			data-role="header" data-position="fixed" data-hide-during-focus=""  data-tap-toggle="false" >
-				<a onClick="showMenu()" data-role="button" class="bttn_texto ui-btn" id="homeBack">Voltar</a>			
-				<h1 style="font-size: 1.5em;font-family: arial">Ressuscitou</h1>
-			</div>
-			<div id="menu">
-			<div id="menucol" style="margin-top:10px">						
-				<a onclick="setCantosList(0)" data-role="button" class="bttn_menu bttn_texto ui-btn">Indice Alfabético</a>
-				<a onclick="showLiturgico()"  data-role="button" class="bttn_menu bttn_texto ui-btn">Indice Litúgico</a>
-				<hr id="hrred">
-				<a onclick="setCantosList(1)" data-role="button" class="bttn_menu bttn_texto ui-btn">Pré-Catecumenato</a>
-				<a onclick="setCantosList(2)" data-role="button" class="bttn_menu bttn_texto ui-btn">Catecumenato</a>
-				<a onclick="setCantosList(3)" data-role="button" class="bttn_menu bttn_texto ui-btn">Eleição</a>
-				<a onclick="setCantosList(4)" data-role="button" class="bttn_menu bttn_texto ui-btn">Liturgia</a>				
-			</div>
-			</div>
-			<div id="menulit" >
-			<div id="menucol" style="margin-top:10px">						
-				<a onclick="setCantosLit('ADVENTO')" data-role="button" class="bttn_menu bttn_texto ui-btn">Advento</a>
-				<a onclick="setCantosLit('LAUVESP')" data-role="button" class="bttn_menu bttn_texto ui-btn">Laudes - Vésperas</a>
-				<a onclick="setCantosLit('ENTRADA')" data-role="button" class="bttn_menu bttn_texto ui-btn">Cantos de Entrada</a>
-				<a onclick="setCantosLit('NATAL')"   data-role="button" class="bttn_menu bttn_texto ui-btn">Natal</a>
-				<a onclick="setCantosLit('QUARESMA')" data-role="button" class="bttn_menu bttn_texto ui-btn">Quaresma</a>
-				<a onclick="setCantosLit('PASCOA')"   data-role="button" class="bttn_menu bttn_texto ui-btn">Páscoa</a>
-				<a onclick="setCantosLit('PENTECOSTES')"    data-role="button" class="bttn_menu bttn_texto ui-btn">Pentecostes</a>
-				<a onclick="setCantosLit('CANTOSVIRGEM')"   data-role="button" class="bttn_menu bttn_texto ui-btn">Cantos à Virgem</a>
-				<a onclick="setCantosLit('CANTOSCRIANCAS')" data-role="button" class="bttn_menu bttn_texto ui-btn">Cantos para as Crianças</a>
-				<a onclick="setCantosLit('PAZ')"       data-role="button" class="bttn_menu bttn_texto ui-btn">Paz</a>
-				<a onclick="setCantosLit('FRACAOPAO')" data-role="button" class="bttn_menu bttn_texto ui-btn">Fração do Pão</a>
-				<a onclick="setCantosLit('COMUNHAO')"  data-role="button" class="bttn_menu bttn_texto ui-btn">Comunhão</a>
-				<a onclick="setCantosLit('FINAL')"     data-role="button" class="bttn_menu bttn_texto ui-btn">Canto Final</a>			
-			</div>
-			</div>
-			<div id="list">			
-		        	<ul id="cantoslist" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." ></ul>
-		    	</div>		
-		</div>
-		<script src="js/jquery.js"></script>
-		<script src="js/jquery.mobile-1.4.5.min.js"></script>
-		<script src="js/cantoslist.js"></script>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>DayPilot Sample</title>
+    </head>
+    <body>
+        <div id="dp"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/daypilot-all.min.js"></script>
+        <script type="text/javascript">
+            var dp = new DayPilot.Calendar("dp");
+            dp.heightSpec = "Parent100Pct";
+            dp.init();
+        </script>
+    </body>
 </html>
